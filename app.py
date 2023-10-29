@@ -114,6 +114,7 @@ def main():
     with st.expander("⏰ Statistical data"):
         showData=st.multiselect('Filter: ',df.columns,default=df.columns.to_list())
         st.dataframe(df.describe(percentiles=percentiles).loc[:],use_container_width=True)
+        st.download_button('export data as', df.to_csv().encode('utf-8'), file_name='data.csv',mime='text/csv',)
     
     st.subheader('Correlation factors')
     vec_list =['GRV (1E6m3)','NRV (1E6m3)','HCPV (1E6m3)','OIIP (m3)',
