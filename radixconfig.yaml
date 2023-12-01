@@ -1,0 +1,8 @@
+apiVersion: radix.equinor.com/v1
+kind: RadixApplication
+metadata:
+  name: testvolumeapp
+spec:
+  build:
+    useBuildKit: true
+    useBuildCache: true
